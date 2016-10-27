@@ -25,25 +25,4 @@
       </property>
     </property>
   </property>
-  <property name="desktop-icons" type="empty">
-    <property name="icon-size" type="uint" value="42"/>
-    <property name="file-icons" type="empty">
-      <property name="show-filesystem" type="bool" value="true"/>
-    </property>
-  </property>
-  <property name="desktop-icons" type="empty">
-    <property name="icon-size" type="uint" value="32"/>
-    <property name="file-icons" type="empty">
-      <property name="show-filesystem" type="bool" value="false"/>
-    </property>
-  </property>
-  <property name="windowlist-menu" type="empty">
-    <property name="show-workspace-names" type="bool" value="false"/>
-    <property name="show-icons" type="bool" value="false"/>
-    <property name="show" type="bool" value="false"/>
-  </property>
-  <property name="desktop-menu" type="empty">
-    <property name="show-icons" type="bool" value="false"/>
-    <property name="show" type="bool" value="false"/>
-  </property>
 </channel>
