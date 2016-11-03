@@ -83,6 +83,7 @@ EOF
             desktop-grub \
             /usr/share/images/desktop-base/$background $priority
     done << EOF
+pardus-grub.png 25
 joy-grub.png 15
 spacefun-grub.png 15
 spacefun-grub-widescreen.png 14
