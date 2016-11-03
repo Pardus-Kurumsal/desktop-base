@@ -42,27 +42,20 @@ install:
 	$(INSTALL) kde-wallpaper/10-desktop-base.js $(DESTDIR)/usr/share/kde4/apps/plasma-desktop/init/
 
 	# KDE Wallpaper
-	## Joy
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/joy
-	$(INSTALL) kde-wallpaper/joy/metadata.desktop $(DESTDIR)/usr/share/wallpapers/joy/
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/joy/contents
-	$(INSTALL) kde-wallpaper/joy/contents/screenshot.png $(DESTDIR)/usr/share/wallpapers/joy/contents/
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/joy/contents/images
-	$(INSTALL) $(wildcard kde-wallpaper/joy/contents/images/*) $(DESTDIR)/usr/share/wallpapers/joy/contents/images/
-	# Inksplat Version
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/joy_inksplat
-	$(INSTALL) kde-wallpaper/joy_inksplat/metadata.desktop $(DESTDIR)/usr/share/wallpapers/joy_inksplat/
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/joy_inksplat/contents
-	$(INSTALL) kde-wallpaper/joy_inksplat/contents/screenshot.png $(DESTDIR)/usr/share/wallpapers/joy_inksplat/contents/
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/joy_inksplat/contents/images
-	$(INSTALL) $(wildcard kde-wallpaper/joy_inksplat/contents/images/*) $(DESTDIR)/usr/share/wallpapers/joy_inksplat/contents/images/
-	## Lines
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/Lines
-	$(INSTALL) kde-wallpaper/Lines/metadata.desktop $(DESTDIR)/usr/share/wallpapers/Lines/
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/Lines/contents
-	$(INSTALL) kde-wallpaper/Lines/contents/screenshot.png $(DESTDIR)/usr/share/wallpapers/Lines/contents/
-	mkdir -p $(DESTDIR)/usr/share/wallpapers/Lines/contents/images
-	$(INSTALL) $(wildcard kde-wallpaper/Lines/contents/images/*) $(DESTDIR)/usr/share/wallpapers/Lines/contents/images/
+	## Anger
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/anger
+	$(INSTALL) kde-wallpaper/anger/metadata.desktop $(DESTDIR)/usr/share/wallpapers/anger/
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/anger/contents
+	$(INSTALL) kde-wallpaper/anger/contents/screenshot.png $(DESTDIR)/usr/share/wallpapers/anger/contents/
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/anger/contents/images
+	$(INSTALL) $(wildcard kde-wallpaper/anger/contents/images/*) $(DESTDIR)/usr/share/wallpapers/anger/contents/images/
+	## Gray
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/gray
+	$(INSTALL) kde-wallpaper/gray/metadata.desktop $(DESTDIR)/usr/share/wallpapers/gray/
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/gray/contents
+	$(INSTALL) kde-wallpaper/gray/contents/screenshot.png $(DESTDIR)/usr/share/wallpapers/gray/contents/
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/gray/contents/images
+	$(INSTALL) $(wildcard kde-wallpaper/gray/contents/images/*) $(DESTDIR)/usr/share/wallpapers/gray/contents/images/
 
 
 	# KDM theme
