@@ -62,20 +62,20 @@ EOF
     ## Favor widescreen / hi-res background for efi installations
     num_grub_efi_installed=$(dpkg-query --list "grub-efi*" | grep "^i" | wc -l)
     if [ $num_grub_efi_installed -gt 0 ] ; then
-        lines_grub_prio=15
-        lines_grub_1920_prio=20
+        pardus_grub_prio=15
+        pardus_grub_1920_prio=20
     else
-        lines_grub_prio=20
-        lines_grub_1920_prio=15
+        pardus_grub_prio=20
+        pardus_grub_1920_prio=15
     fi
     update-alternatives --install \
         /usr/share/images/desktop-base/desktop-grub.png \
         desktop-grub \
-        /usr/share/images/desktop-base/lines-grub.png $lines_grub_prio
+        /usr/share/images/desktop-base/pardus-grub.png $pardus_grub_prio
     update-alternatives --install \
         /usr/share/images/desktop-base/desktop-grub.png \
         desktop-grub \
-        /usr/share/images/desktop-base/lines-grub-1920x1080.png $lines_grub_1920_prio
+        /usr/share/images/desktop-base/pardus-grub-1920x1080.png $pardus_grub_1920_prio
 
     while read background priority; do
         update-alternatives --install \
@@ -83,10 +83,6 @@ EOF
             desktop-grub \
             /usr/share/images/desktop-base/$background $priority
     done << EOF
-pardus-grub.png 25
-joy-grub.png 15
-spacefun-grub.png 15
-spacefun-grub-widescreen.png 14
 EOF
 
     # GRUB background
