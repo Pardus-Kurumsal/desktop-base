@@ -1,3 +1,15 @@
+desktop-base (8.0.2pardus3) pardus; urgency=medium
+
+  * Remove debian wallpapers and Add Pardus wallpapers
+  * Update anger wallpaper workart
+  * Update postinst script for new backgrounds
+  * Update gnome-backgrounds.xml for new wallpapers
+  * Update kde-wallpaper directory for new backgrounds
+  * Update background.svg under login directory
+  * Update Makefile for kde-wallpapers
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 03 Nov 2016 16:14:58 +0300
+
 desktop-base (8.0.2pardus2) pardus; urgency=medium
 
   * Update hd grub background
