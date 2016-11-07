@@ -49,8 +49,7 @@ EOF
             desktop-splash \
             /usr/share/images/desktop-base/$splash $priority
     done << EOF
-spacefun-splash.svg 50
-moreblue-orbit-splash.png 40
+pardus-splash.png 50
 EOF
 
     # Alternatives for grub
