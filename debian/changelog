@@ -1,3 +1,14 @@
+desktop-base (8.0.2pardus4) pardus; urgency=medium
+
+  * Add plymouth theme runner
+  * Remove old plymouth themes
+  * Update Makefile for runner plymouth theme
+  * Add pardus-splash.png
+  * Remove debian's splash files
+  * Update  postinst for splash image
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 07 Nov 2016 11:03:26 +0300
+
 desktop-base (8.0.2pardus3) pardus; urgency=medium
 
   * Remove debian wallpapers and Add Pardus wallpapers
