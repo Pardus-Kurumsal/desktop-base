@@ -108,12 +108,7 @@ install:
 	$(INSTALL) grub/grub_background.sh $(DESTDIR)/usr/share/desktop-base/
 
 	# plymouth
-	install -d $(DESTDIR)/usr/share/plymouth/themes/spacefun
-	$(INSTALL) $(wildcard plymouth/spacefun/*) $(DESTDIR)/usr/share/plymouth/themes/spacefun
+	install -d $(DESTDIR)/usr/share/plymouth/themes/runner
+	$(INSTALL) $(wildcard plymouth/runner/*) $(DESTDIR)/usr/share/plymouth/themes/runner
 
-	install -d $(DESTDIR)/usr/share/plymouth/themes/joy
-	$(INSTALL) $(wildcard plymouth/joy/*) $(DESTDIR)/usr/share/plymouth/themes/joy
-
-	install -d $(DESTDIR)/usr/share/plymouth/themes/lines
-	$(INSTALL) $(wildcard plymouth/lines/*) $(DESTDIR)/usr/share/plymouth/themes/lines
 
