@@ -19,15 +19,15 @@ if [ "$1" = "configure" -o "$1" = "abort-upgrade" ]; then
             desktop-background \
             /usr/share/images/desktop-base/$background $priority
     done << EOF
-anger-wallpaper_1280x1024.svg 65
-anger-wallpaper_1600x1200.svg 65
-anger-wallpaper_1920x1080.svg 70
-anger-wallpaper_1920x1200.svg 65
-anger-wallpaper_2560x1080.svg 65
-gray-wallpaper_1600x1200.svg 60
-gray-wallpaper_1280x1024.svg 60
-gray-wallpaper_1920x1080.svg 60
-gray-wallpaper_1920x1200.svg 60
+anger-wallpaper_1280x1024.svg 60
+anger-wallpaper_1600x1200.svg 60
+anger-wallpaper_1920x1080.svg 60
+anger-wallpaper_1920x1200.svg 60
+anger-wallpaper_2560x1080.svg 60
+gray-wallpaper_1600x1200.svg 65
+gray-wallpaper_1280x1024.svg 65
+gray-wallpaper_1920x1080.svg 70
+gray-wallpaper_1920x1200.svg 65
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -38,8 +38,8 @@ EOF
             desktop-background.xml \
             /usr/share/images/desktop-base/$desktopbackground $priority
     done << EOF
-anger.xml 20
-gray.xml 10
+anger.xml 10
+gray.xml 20
 EOF
 
     # Alternatives for the splash
