@@ -1,3 +1,9 @@
+desktop-base (8.0.2pardus6) pardus; urgency=medium
+
+  * Update plymouth runner theme logo and postinst script
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Tue, 08 Nov 2016 15:19:09 +0300
+
 desktop-base (8.0.2pardus5) pardus; urgency=medium
 
   * Remove debian icons and add pardus icons
