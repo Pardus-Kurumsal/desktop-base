@@ -1,3 +1,10 @@
+desktop-base (8.0.2pardus8) pardus; urgency=medium
+
+  * Update xfce config xmls
+  * Decrease workspace_count config
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 11:04:46 +0300
+
 desktop-base (8.0.2pardus7) pardus; urgency=medium
 
   * Add xfce4 config files for pardus
