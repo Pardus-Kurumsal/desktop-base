@@ -4,5 +4,6 @@
   <property name="general" type="empty">
 	<property name="theme" type="string" value="Greybird"/>
     <property name="button_layout" type="string" value="O|HMC"/>
+    <property name="workspace_count" type="int" value="1"/>
   </property>
 </channel>
