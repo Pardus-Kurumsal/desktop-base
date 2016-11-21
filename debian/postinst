@@ -24,10 +24,15 @@ anger-wallpaper_1600x1200.svg 60
 anger-wallpaper_1920x1080.svg 60
 anger-wallpaper_1920x1200.svg 60
 anger-wallpaper_2560x1080.svg 60
-gray-wallpaper_1600x1200.svg 65
-gray-wallpaper_1280x1024.svg 65
-gray-wallpaper_1920x1080.svg 70
-gray-wallpaper_1920x1200.svg 65
+blue-wallpaper_1280x1024.svg 65
+blue-wallpaper_1600x1200.svg 65
+blue-wallpaper_1920x1080.svg 70
+blue-wallpaper_1920x1200.svg 65
+blue-wallpaper_2560x1080.svg 65
+gray-wallpaper_1600x1200.svg 55
+gray-wallpaper_1280x1024.svg 55
+gray-wallpaper_1920x1080.svg 55
+gray-wallpaper_1920x1200.svg 55
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -39,7 +44,8 @@ EOF
             /usr/share/images/desktop-base/$desktopbackground $priority
     done << EOF
 anger.xml 10
-gray.xml 20
+blue.xml 20
+gray.xml 15
 EOF
 
     # Alternatives for the splash
