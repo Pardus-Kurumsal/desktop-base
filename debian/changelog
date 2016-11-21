@@ -1,3 +1,11 @@
+desktop-base (8.0.2pardus10) pardus; urgency=medium
+
+  * Add blue backgrounds
+  * Make blue background default
+  * Change login screen background
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 15:42:02 +0300
+
 desktop-base (8.0.2pardus9) pardus; urgency=medium
 
   * Fix desktop background issue
