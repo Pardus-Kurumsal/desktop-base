@@ -49,6 +49,13 @@ install:
 	$(INSTALL) kde-wallpaper/anger/contents/screenshot.png $(DESTDIR)/usr/share/wallpapers/anger/contents/
 	mkdir -p $(DESTDIR)/usr/share/wallpapers/anger/contents/images
 	$(INSTALL) $(wildcard kde-wallpaper/anger/contents/images/*) $(DESTDIR)/usr/share/wallpapers/anger/contents/images/
+	## Blue
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/blue
+	$(INSTALL) kde-wallpaper/blue/metadata.desktop $(DESTDIR)/usr/share/wallpapers/blue/
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/blue/contents
+	$(INSTALL) kde-wallpaper/blue/contents/screenshot.png $(DESTDIR)/usr/share/wallpapers/blue/contents/
+	mkdir -p $(DESTDIR)/usr/share/wallpapers/blue/contents/images
+	$(INSTALL) $(wildcard kde-wallpaper/blue/contents/images/*) $(DESTDIR)/usr/share/wallpapers/blue/contents/images/
 	## Gray
 	mkdir -p $(DESTDIR)/usr/share/wallpapers/gray
 	$(INSTALL) kde-wallpaper/gray/metadata.desktop $(DESTDIR)/usr/share/wallpapers/gray/
