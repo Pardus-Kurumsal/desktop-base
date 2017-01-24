@@ -1,8 +1,0 @@
-[Plymouth Theme]
-Name=runner
-Description=runner boot theme.
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/runner
-ScriptFile=/usr/share/plymouth/themes/runner/runner.script
