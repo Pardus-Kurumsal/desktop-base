@@ -1,3 +1,9 @@
+desktop-base (8.0.2pardus13) pardus; urgency=medium
+
+  * Update pardus-grub png for visual compatibility
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Wed, 15 Feb 2017 10:12:40 +0300
+
 desktop-base (8.0.2pardus12) pardus; urgency=medium
 
   * Add blue wallpapers into kde-wallpaper directory and update Makefile
