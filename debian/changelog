@@ -88,6 +88,108 @@ desktop-base (9.0.0~exp1) experimental; urgency=medium
 
  -- Yves-Alexis Perez <corsac@debian.org>  Mon, 07 Nov 2016 21:32:30 +0100
 
+desktop-base (8.0.2pardus13) pardus; urgency=medium
+
+  * Update pardus-grub png for visual compatibility
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Wed, 15 Feb 2017 10:12:40 +0300
+
+desktop-base (8.0.2pardus12) pardus; urgency=medium
+
+  * Add blue wallpapers into kde-wallpaper directory and update Makefile
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 12 Dec 2016 09:50:04 +0300
+
+desktop-base (8.0.2pardus11) pardus; urgency=medium
+
+  * Revert changes for pardus from profiles directory
+  * Modify Makefile and revert installing xdg-config changes
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 27 Oct 2016 17:50:46 +0300
+
+desktop-base (8.0.2pardus10) pardus; urgency=medium
+
+  * Add blue backgrounds
+  * Make blue background default
+  * Change login screen background
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 15:42:02 +0300
+
+desktop-base (8.0.2pardus9) pardus; urgency=medium
+
+  * Fix desktop background issue
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 11:40:58 +0300
+
+desktop-base (8.0.2pardus8) pardus; urgency=medium
+
+  * Update xfce config xmls
+  * Decrease workspace_count config
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 11:04:46 +0300
+
+desktop-base (8.0.2pardus7) pardus; urgency=medium
+
+  * Add xfce4 config files for pardus
+  * Update Makefile for xfce4 configs
+  * Update gsettings override for gnome lockscreen
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 18 Nov 2016 12:02:51 +0300
+
+desktop-base (8.0.2pardus6) pardus; urgency=medium
+
+  * Update plymouth runner theme logo and postinst script
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Tue, 08 Nov 2016 15:19:09 +0300
+
+desktop-base (8.0.2pardus5) pardus; urgency=medium
+
+  * Remove debian icons and add pardus icons
+  * Change desktop files
+  * Remove debian's wallpapers source files and add pardus ones
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 07 Nov 2016 12:12:17 +0300
+
+desktop-base (8.0.2pardus4) pardus; urgency=medium
+
+  * Add plymouth theme runner
+  * Remove old plymouth themes
+  * Update Makefile for runner plymouth theme
+  * Add pardus-splash.png
+  * Remove debian's splash files
+  * Update  postinst for splash image
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 07 Nov 2016 11:03:26 +0300
+
+desktop-base (8.0.2pardus3) pardus; urgency=medium
+
+  * Remove debian wallpapers and Add Pardus wallpapers
+  * Update anger wallpaper workart
+  * Update postinst script for new backgrounds
+  * Update gnome-backgrounds.xml for new wallpapers
+  * Update kde-wallpaper directory for new backgrounds
+  * Update background.svg under login directory
+  * Update Makefile for kde-wallpapers
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 03 Nov 2016 16:14:58 +0300
+
+desktop-base (8.0.2pardus2) pardus; urgency=medium
+
+  * Update hd grub background
+  * Update Makefile for grub and remove debian grub backgrounds
+  * Update postinst script for grub
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 03 Nov 2016 15:26:01 +0300
+
+desktop-base (8.0.2pardus1) pardus; urgency=medium
+
+  * Add .drone.yml
+  * Add grub images into grub directory
+  * Update makefile according to new grub files
+  * Update postinst script according to pardus grub files
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 03 Nov 2016 10:49:09 +0300
+
 desktop-base (8.0.2) unstable; urgency=medium
 
   * Reinstate login-background.svg. Closes: #773015.
@@ -141,7 +243,7 @@ desktop-base (8.0.0~exp1) experimental; urgency=low
 
   [ Yves-Alexis Perez ]
   * Initial support for Lines theme by Juliette Belin.
-    - add the various ratio SVG wallpapers to backgrounds/
+    - add the various ratio SVG wallpapers to backgrounds/ 
     - debian/{postinst,prerm}: update alternatives priority to make Lines the
       automatic/default one
     - gdm3/background.svg updated to use Lines login screen
@@ -260,9 +362,9 @@ desktop-base (6.0.7) unstable; urgency=low
 
   [ Josselin Mouette ]
   * Build-depend on recent cdbs+debhelper to have dh_installgsettings.
-  * debian/gsettings-override: set the default background using
+  * debian/gsettings-override: set the default background using 
     GSettings.
-  * xy_desktop-base.gschema.override: configure the default background
+  * xy_desktop-base.gschema.override: configure the default background 
     for gdm3 using GSettings as well.
   * All of this closes: #623094.
   * Add myself to uploaders.
@@ -317,7 +419,7 @@ desktop-base (6.0.3) unstable; urgency=low
     - don't set image-style property, default to auto.          closes: #523150
   * cleanup debian/copyright for removed stuff.                 closes: #594533
   * debian/pixmaps:
-    - debian-security updated, thanks to Ulrich Hansen.         closes: #389155
+    - debian-security updated, thanks to Ulrich Hansen.         closes: #389155 
   * DFSG-ify artwork:                                           closes: #587668
     - various themes, thanks to Ulrich Hansen.
     - SpaceFun theme, thanks to Valessio Brito.
@@ -389,10 +491,10 @@ desktop-base (6.0.0) unstable; urgency=low
       written to disk.
   * debian/prerm:
     - rename grub alternative to add png extension.
-  * Makefile:
+  * Makefile: 
     - drop unused rules for KDE3 and Xfce 4.4.
     - add SpaceFun gdm3 theme.
-    - add SpaceFun kdm theme.
+    - add SpaceFun kdm theme. 
     - install grub theme and script.
   * {ksplash,kdm}-theme/moreblue-orbit{-default}:
     - drop “Debian” word from image to only use DFSG-free logo. closes: #587668
@@ -434,7 +536,7 @@ desktop-base (5.0.3) unstable; urgency=medium
   * debian/preinst:
     - handle upgrade in various cases: (/etc/splashy/themes symlink or not,
       and changed or unchanged themes files)
-  * debian/README.Debian:
+  * debian/README.Debian: 
     - announce the change.
     - tell user how to enable MoreBlue orbit theme if splashy is installed
       after desktop-base.
