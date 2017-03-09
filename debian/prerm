@@ -1,53 +1,149 @@
-#!/bin/sh -e
+#!/bin/sh
 set -e
 
+# Tag to allow some debhelper commands to inject relevant code
 #DEBHELPER#
 
 if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
-    # remove background alternatives
-    for background in \
-          lines-wallpaper_1280x1024.svg \
-          lines-wallpaper_1600x1200.svg \
-          lines-wallpaper_1920x1080.svg \
-          lines-wallpaper_1920x1200.svg \
-          lines-wallpaper_2560x1080.svg \
-          joy-wallpaper_1600x1200.svg \
-          joy-wallpaper_1600x1200.svg \
-          joy-wallpaper_1280x1024.svg \
-          joy-wallpaper_1920x1080.svg \
-          joy-wallpaper_1920x1200.svg \
-          joy-inksplat-wallpaper_1920x1080.svg \
-          spacefun-wallpaper.svg \
-          spacefun-wallpaper-widescreen.svg \
-          moreblue-orbit-wallpaper.svg \
-          moreblue-orbit-wallpaper-widescreen.svg \
-          ; do
-        update-alternatives --remove desktop-background /usr/share/images/desktop-base/$background
-    done
-    # remove desktop-background.xml alternatives
-    for desktopbackground in \
-          lines.xml \
-          joy.xml \
-          ; do
-        update-alternatives --remove desktop-background.xml /usr/share/images/desktop-base/$desktopbackground
+    # Remove background alternatives for theme packages
+    while read theme filename; do
+        update-alternatives --remove \
+            desktop-background \
+            /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
+    done << EOF
+blue 1280x1024.svg
+blue 1600x1200.svg
+blue 1920x1080.svg
+blue 1920x1200.svg
+blue 2560x1080.svg
+anger 1280x1024.svg
+anger 1600x1200.svg
+anger 1920x1080.svg
+anger 1920x1200.svg
+anger 2560x1080.svg
+gray 1280x1024.svg
+gray 1600x1200.svg
+gray 1920x1080.svg
+gray 1920x1200.svg
+EOF
+    # *Last* remove background *highest priority* alternatives for active theme
+    update-alternatives --remove desktop-background /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg
+
+    # Remove desktop-background.xml alternatives
+    # For theme packages
+    while read theme; do
+        update-alternatives --remove \
+            desktop-background.xml \
+            /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
+    done << EOF
+blue
+anger
+gray
+EOF
+    # *Lastly* remove *highest priority* alternative for active theme
+    update-alternatives --remove \
+        desktop-background.xml \
+        /usr/share/desktop-base/active-theme/wallpaper/gnome-background.xml
+
+    # Remove desktop-lockscreen.xml alternatives
+    # For theme packages
+    while read theme; do
+        update-alternatives --remove \
+            desktop-lockscreen.xml \
+            /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
+    done << EOF
+blue
+EOF
+    # *Last* remove *highest priority* alternative for active theme
+    update-alternatives --remove \
+        desktop-lockscreen.xml \
+        /usr/share/desktop-base/active-theme/lockscreen/gnome-background.xml
+
+    # Remove Plasma 5/KDE wallpaper alternatives
+    # For theme packages
+    while read theme; do
+        update-alternatives --remove \
+            desktop-plasma5-wallpaper \
+            /usr/share/desktop-base/$theme-theme/wallpaper
+    done << EOF
+blue
+anger
+gray
+EOF
+    # *Last* remove *highest priority* alternative for active theme
+    update-alternatives --remove \
+        desktop-plasma5-wallpaper \
+        /usr/share/desktop-base/active-theme/wallpaper
+
+    # Remove login theme alternatives
+    # For theme packages
+    # Alternative for theme packages
+    while read theme background; do
+        update-alternatives --remove \
+            desktop-login-background \
+            /usr/share/desktop-base/$theme-theme/login/$background
+    done << EOF
+blue background.svg
+anger background.svg
+gray background.svg
+EOF
+    # *Last* remove *highest priority* alternative for active theme
+    update-alternatives --remove \
+        desktop-login-background \
+        /usr/share/desktop-base/active-theme/login/background.svg
+
+    # Remove GRUB alternatives
+    # Remove alternative for the GRUB background/colors config
+    while read theme priority; do
+        update-alternatives --remove \
+            desktop-grub.sh \
+            /usr/share/desktop-base/grub/grub_background.sh
     done
 
-    # remove splash alternatives
-    for splash in \
-          spacefun-splash.svg \
-          moreblue-orbit-splash.png \
-          ; do
-        update-alternatives --remove desktop-splash /usr/share/images/desktop-base/$splash
-    done
+    # Remove background alternatives
+    while read theme ratio; do
+        update-alternatives --remove \
+            desktop-grub.sh \
+            /usr/share/desktop-base/grub/grub_background.sh
+        update-alternatives --remove \
+            desktop-grub \
+            /usr/share/desktop-base/grub/grub-$ratio.png
+    done << EOF
+4x3
+16x9
+EOF
+    ## *Lastly* remove *highest priority* alternative
+    num_grub_efi_installed=$(dpkg-query --list "grub-efi*" 2> /dev/null | grep "^i" | wc -l)
+    if [ $num_grub_efi_installed -gt 0 ] ; then
+        remove_first_ratio=4x3
+        remove_last_ratio=16x9
+    else
+        remove_first_ratio=16x9
+        remove_last_ratio=4x3
+    fi
+    update-alternatives --remove \
+        desktop-grub.sh \
+        /usr/share/desktop-base/active-theme/grub/grub_background.sh
+    update-alternatives --remove \
+        desktop-grub \
+        /usr/share/desktop-base/active-theme/grub/grub-$remove_first_ratio.png
+    update-alternatives --remove \
+        desktop-grub \
+        /usr/share/desktop-base/active-theme/grub/grub-$remove_last_ratio.png
 
-    # remove grub alternatives
-    for background in \
-          lines-grub.png \
-          lines-grub-1920x1080.png \
-          joy-grub.png \
-          spacefun-grub.png \
-          spacefun-grub-widescreen.png \
-          ; do
-        update-alternatives --remove desktop-grub /usr/share/images/desktop-base/$background
-    done
+
+    # Remove theme package alternatives
+    while read theme; do
+        update-alternatives --remove \
+            desktop-theme \
+            /usr/share/desktop-base/$theme-theme
+    done << EOF
+anger
+gray
+EOF
+    ## *Lastly* remove *highest priority* alternative
+    update-alternatives --remove \
+        desktop-theme \
+        /usr/share/desktop-base/blue-theme
+
 fi

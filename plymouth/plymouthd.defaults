@@ -1,0 +1,4 @@
+# Defaults provided by desktop-base for the runner theme
+[Daemon]
+Theme=runner
+ShowDelay=0

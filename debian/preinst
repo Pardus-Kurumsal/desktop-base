@@ -1,39 +1,128 @@
-#!/bin/sh -e
+#!/bin/sh
 set -e
 
+# Tag to allow some debhelper commands to inject relevant code
 #DEBHELPER#
-if dpkg-maintscript-helper supports rm_conffile 2>/dev/null; then
-  dpkg-maintscript-helper rm_conffile /etc/kde3/kdeglobals 6.0.1 -- "$@"
-fi
 
 if [ "${1}" = "upgrade" ]; then
-    if dpkg --compare-versions ${2} lt 0.3.11 && dpkg --compare-versions ${2} gt 0.3.5; then
-        update-alternatives --remove gnome-splash \
-            /usr/share/images/desktop-base/Splash-Debian.png
-        update-alternatives --remove gnome-splash \
-            /usr/share/images/desktop-base/Splash-EvolvingTux.png
-        update-alternatives --remove gnome-splash \
-            /usr/share/images/desktop-base/Splash-Debian_red.png
+    if dpkg --compare-versions ${2} le "9.0.0~exp1"; then
+        # Remove alternatives for moreblue wallpapers we don’t ship anymore
+        while read background; do
+            update-alternatives --remove \
+                desktop-background \
+                /usr/share/images/desktop-base/$background
+        done << EOF
+moreblue-orbit-wallpaper.svg
+moreblue-orbit-wallpaper-widescreen.svg
+EOF
 
-        dpkg-divert --package desktop-base --rename \
-            --divert /usr/share/pixmaps/splash/gnome-splash.png.orig \
-            --remove /usr/share/pixmaps/splash/gnome-splash.png
+        # Remove alternatives for Joy/Spacefun we now ship elsewhere as a theme
+        # pack.
+        # Wallpapers
+        while read background; do
+            update-alternatives --remove \
+                desktop-background \
+                /usr/share/images/desktop-base/$background
+        done << EOF
+anger-wallpaper_1280x1024.svg
+anger-wallpaper_1600x1200.svg
+anger-wallpaper_1920x1080.svg
+anger-wallpaper_1920x1200.svg
+anger-wallpaper_2560x1080.svg
+blue-lockscreen_1280x1024.svg
+blue-lockscreen_1600x1200.svg
+blue-lockscreen_1920x1080.svg
+blue-lockscreen_1920x1200.svg
+blue-lockscreen_2560x1080.svg
+blue-wallpaper_1280x1024.svg
+blue-wallpaper_1600x1200.svg
+blue-wallpaper_1920x1080.svg
+blue-wallpaper_1920x1200.svg
+blue-wallpaper_2560x1080.svg
+gray-wallpaper_1280x1024.svg
+gray-wallpaper_1600x1200.svg
+gray-wallpaper_1920x1080.svg
+gray-wallpaper_1920x1200.svg
+EOF
+        # Wallpaper XML descriptions (for Gnome)
+        while read desktopbackground; do
+            update-alternatives --remove \
+                desktop-background.xml \
+                /usr/share/images/desktop-base/$desktopbackground
+        done << EOF
+blue.xml
+anger.xml
+gray.xml
+EOF
+        # GRUB backgrounds
+        while read background; do
+            update-alternatives --remove \
+                desktop-grub \
+                /usr/share/images/desktop-base/$background
+        done << EOF
+pardus-grub.png
+EOF
+        if dpkg --compare-versions ${2} ge "9.0.0~exp1"; then
+            echo "ge 9.0.0~exp1"
+            # Remove alternatives shipped in 9.0.0~exp1 but now integrated
+            # into the theme pack system.
+            # Joy old theme structure
+            update-alternatives --remove \
+                desktop-login-background \
+                /usr/share/desktop-base/joy-theme/login-background.svg
+            # Remove login theme alternatives for theme packages
+            # because we’re dropping the secondary link for SDDM preview
+            while read theme background; do
+                update-alternatives --remove \
+                    desktop-login-background \
+                    /usr/share/desktop-base/$theme-theme/login/$background
+            done << EOF
+blue background.svg
+anger background.svg
+gray background-nologo.svg
+EOF
+            # *Last* remove *highest priority* alternative for active theme
+            update-alternatives --remove \
+                desktop-login-background \
+                /usr/share/desktop-base/active-theme/login/background.svg
+        fi
+
     fi
+
+    if dpkg --compare-versions ${2} lt "9.0.0~"; then
+        # Remove alternative for desktop splash we don’t ship anymore
+        update-alternatives --remove-all desktop-splash
+
+        # Remove alternatives for themes we now ship elsewhere as a theme pack
+        ## Wallpaper
+        for background in \
+              anger-wallpaper_1280x1024.svg \
+              anger-wallpaper_1600x1200.svg \
+              anger-wallpaper_1920x1200.svg \
+              anger-wallpaper_2560x1080.svg \
+              anger-wallpaper_1920x1080.svg \
+              ; do
+            update-alternatives --remove desktop-background /usr/share/images/desktop-base/$background
+        done
+        update-alternatives --remove \
+            desktop-background.xml \
+            /usr/share/images/desktop-base/lines.xml
+        ## Login background
+        update-alternatives --remove desktop-login-background \
+            /usr/share/desktop-base/lines-theme/login-background.svg
+        update-alternatives --remove desktop-login-background \
+            /usr/share/desktop-base/lines-theme/login-background-with-logo.svg
+
+        ## Grub background
+        while read background; do
+            update-alternatives --remove \
+                desktop-grub \
+                /usr/share/images/desktop-base/$background
+        done << EOF
+pardus-grub.png
+pardus-grub-1920x1080.png
+EOF
+    fi
+
+
 fi
-
-same_conffile() {
-  CONFFILE="$1"
-  if [ -e "$CONFFILE" ]; then
-    md5sum="`md5sum \"$CONFFILE\" | sed -e \"s/ .*//\"`"
-    old_md5sum="`dpkg-query -W -f='${Conffiles}' desktop-base | sed -n -e \"\\\\' $CONFFILE '{s/ obsolete$//;s/.* //p}\"`"
-    [ "$md5sum" = "$old_md5sum" ]
-    return
-  fi
-  return 1
-}
-
-case "$1" in
-  install|upgrade)
-  ;;
-esac
-
