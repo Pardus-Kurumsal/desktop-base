@@ -16,7 +16,7 @@ build-grub clean-grub install-grub:
 
 build-emblems clean-emblems install-emblems:
 	@target=`echo $@ | sed s/-emblems//`; \
-	$(MAKE) $$target -C emblems-debian || exit 1;
+	$(MAKE) $$target -C emblems-pardus || exit 1;
 
 clean: clean-grub clean-emblems
 
