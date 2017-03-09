@@ -141,17 +141,17 @@ EOF
     update-alternatives --install \
         /usr/share/images/desktop-base/desktop-grub.png \
         desktop-grub \
-        /usr/share/desktop-base/active-theme/grub/grub-${grub_first_ratio}.png 50 \
+        /usr/share/desktop-base/grub/grub-${grub_first_ratio}.png 50 \
         --slave /usr/share/desktop-base/grub_background.sh \
         desktop-grub.sh \
-        /usr/share/desktop-base/active-theme/grub/grub_background.sh
+        /usr/share/desktop-base/grub/grub_background.sh
     update-alternatives --install \
         /usr/share/images/desktop-base/desktop-grub.png \
         desktop-grub \
-        /usr/share/desktop-base/active-theme/grub/grub-${grub_second_ratio}.png 45 \
+        /usr/share/desktop-base/grub/grub-${grub_second_ratio}.png 45 \
         --slave /usr/share/desktop-base/grub_background.sh \
         desktop-grub.sh \
-        /usr/share/desktop-base/active-theme/grub/grub_background.sh
+        /usr/share/desktop-base/grub/grub_background.sh
     # Alternatives for theme packages
     while read theme ratio priority; do
         update-alternatives --install /usr/share/images/desktop-base/desktop-grub.png \
