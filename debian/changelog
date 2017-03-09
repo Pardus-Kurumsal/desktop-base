@@ -1,3 +1,9 @@
+desktop-base (9.0.2pardus5) pardus; urgency=medium
+
+  * Add missing line about login screen of blue-theme
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 17:00:35 +0300
+
 desktop-base (9.0.2pardus4) pardus; urgency=medium
 
   * Fix directory name problem in main Makefile
