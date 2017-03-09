@@ -19,4 +19,4 @@ grub-4x3.png: grub-4x3.svg
 grub-16x9.png: grub-16x9.svg
 	rsvg-convert $< > $@
 
-include ../../Makefile.inc
+include ../Makefile.inc
