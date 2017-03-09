@@ -6,14 +6,6 @@ DESKTOPFILES=$(wildcard *.desktop)
 
 all: build-grub build-emblems
 
-build-grub clean-grub install-grub:
-	@target=`echo $@ | sed s/-grub//`; \
-	for grub_theme in $(GRUB_THEMES) ; do \
-		if [ -f $$grub_theme/Makefile ] ; then \
-			$(MAKE) $$target -C $$grub_theme || exit 1; \
-		fi \
-	done$
-
 build-emblems clean-emblems install-emblems:
 	@target=`echo $@ | sed s/-emblems//`; \
 	$(MAKE) $$target -C emblems-pardus || exit 1;
@@ -108,5 +100,10 @@ install-local:
 	# Lock screen symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/blue-theme/lockscreen BlueLockScreen
+	
+	# Grub
+	$(INSTALL) grub/pardus-grub.png $(DESTDIR)/usr/share/images/desktop-base/
+	$(INSTALL) grub/pardus-grub-1920x1080.png $(DESTDIR)/usr/share/images/desktop-base/
+	$(INSTALL) grub/grub_background.sh $(DESTDIR)/usr/share/desktop-base/
 
 include Makefile.inc

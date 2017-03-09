@@ -127,55 +127,40 @@ anger background.svg 30
 gray background.svg 20
 EOF
 
-    # Set up an alternative for the GRUB background/colors config
-    # Highest priority for active theme
+    # Alternatives for grub
     ## Favor widescreen / hi-res background for efi installations
-    num_grub_efi_installed=$(dpkg-query --list "grub-efi*" 2> /dev/null | grep "^i" | wc -l)
+    num_grub_efi_installed=$(dpkg-query --list "grub-efi*" | grep "^i" | wc -l)
     if [ $num_grub_efi_installed -gt 0 ] ; then
-        grub_first_ratio="16x9"
-        grub_second_ratio="4x3"
+        pardus_grub_prio=15
+        pardus_grub_1920_prio=20
     else
-        grub_first_ratio="4x3"
-        grub_second_ratio="16x9"
+        pardus_grub_prio=20
+        pardus_grub_1920_prio=15
     fi
     update-alternatives --install \
         /usr/share/images/desktop-base/desktop-grub.png \
         desktop-grub \
-        /usr/share/desktop-base/grub/grub-${grub_first_ratio}.png 50 \
-        --slave /usr/share/desktop-base/grub_background.sh \
-        desktop-grub.sh \
-        /usr/share/desktop-base/grub/grub_background.sh
+        /usr/share/images/desktop-base/pardus-grub.png $pardus_grub_prio
     update-alternatives --install \
         /usr/share/images/desktop-base/desktop-grub.png \
         desktop-grub \
-        /usr/share/desktop-base/grub/grub-${grub_second_ratio}.png 45 \
-        --slave /usr/share/desktop-base/grub_background.sh \
-        desktop-grub.sh \
-        /usr/share/desktop-base/grub/grub_background.sh
-    # Alternatives for theme packages
-    while read theme ratio priority; do
-        update-alternatives --install /usr/share/images/desktop-base/desktop-grub.png \
+        /usr/share/images/desktop-base/pardus-grub-1920x1080.png $pardus_grub_1920_prio
+
+    while read background priority; do
+        update-alternatives --install \
+            /usr/share/images/desktop-base/desktop-grub.png \
             desktop-grub \
-            /usr/share/desktop-base/grub/grub-$ratio.png 40 \
-            --slave /usr/share/desktop-base/grub_background.sh \
-            desktop-grub.sh \
-            /usr/share/desktop-base/grub/grub_background.sh
-    done
-    
+            /usr/share/images/desktop-base/$background $priority
+    done << EOF
+EOF
 
-    # Apply GRUB background update into /boot
-    if which update-grub > /dev/null ; then
-        # Ensure the background image file has actually been written to disc
-        # before updating.
+    # GRUB background
+    if which update-grub2 > /dev/null ; then
         sync
-        # Report success whatever grub return status. This is needed at least
-        # in live systems fon installation to succeed (see #850601).
-        # Until we find a better solution like detecting we’re in a live image
-        # and not calling update-grub at all.
-        update-grub || echo "Updating grub failed, report success anyway!"
+        update-grub2 || true
     fi
 
-    if which update-initramfs > /dev/null; then
+    if [ -x /usr/sbin/update-initramfs ]; then
         update-initramfs -u
     fi
 

@@ -92,45 +92,14 @@ EOF
         desktop-login-background \
         /usr/share/desktop-base/active-theme/login/background.svg
 
-    # Remove GRUB alternatives
-    # Remove alternative for the GRUB background/colors config
-    while read theme priority; do
-        update-alternatives --remove \
-            desktop-grub.sh \
-            /usr/share/desktop-base/grub/grub_background.sh
+    # remove grub alternatives
+    for background in \
+          pardus-grub.png \
+          pardus-grub-1920x1080.png \          
+          ; do
+        update-alternatives --remove desktop-grub /usr/share/images/desktop-base/$background
     done
-
-    # Remove background alternatives
-    while read theme ratio; do
-        update-alternatives --remove \
-            desktop-grub.sh \
-            /usr/share/desktop-base/grub/grub_background.sh
-        update-alternatives --remove \
-            desktop-grub \
-            /usr/share/desktop-base/grub/grub-$ratio.png
-    done << EOF
-4x3
-16x9
-EOF
-    ## *Lastly* remove *highest priority* alternative
-    num_grub_efi_installed=$(dpkg-query --list "grub-efi*" 2> /dev/null | grep "^i" | wc -l)
-    if [ $num_grub_efi_installed -gt 0 ] ; then
-        remove_first_ratio=4x3
-        remove_last_ratio=16x9
-    else
-        remove_first_ratio=16x9
-        remove_last_ratio=4x3
-    fi
-    update-alternatives --remove \
-        desktop-grub.sh \
-        /usr/share/desktop-base/active-theme/grub/grub_background.sh
-    update-alternatives --remove \
-        desktop-grub \
-        /usr/share/desktop-base/active-theme/grub/grub-$remove_first_ratio.png
-    update-alternatives --remove \
-        desktop-grub \
-        /usr/share/desktop-base/active-theme/grub/grub-$remove_last_ratio.png
-
+fi
 
     # Remove theme package alternatives
     while read theme; do
