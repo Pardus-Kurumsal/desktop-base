@@ -4,7 +4,7 @@ DEFAULT_BACKGROUND=desktop-background
 PIXMAPS=$(wildcard pixmaps/*.png)
 DESKTOPFILES=$(wildcard *.desktop)
 
-all: build-grub build-emblems
+all: build-emblems
 
 build-emblems clean-emblems install-emblems:
 	@target=`echo $@ | sed s/-emblems//`; \
