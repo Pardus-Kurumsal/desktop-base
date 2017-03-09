@@ -1,3 +1,9 @@
+desktop-base (9.0.2pardus2) pardus; urgency=medium
+
+  * Make major changes in order to fallow upstream changes
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 16:19:57 +0300
+
 desktop-base (9.0.2pardus1) pardus; urgency=medium
 
   * Apply previous changes for pardus
