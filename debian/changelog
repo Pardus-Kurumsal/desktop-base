@@ -2,7 +2,7 @@ desktop-base (9.0.2pardus6) pardus; urgency=medium
 
   * Remove active-theme path for grub
 
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 17:05:19 +0300
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 17:39:09 +0300
 
 desktop-base (9.0.2pardus5) pardus; urgency=medium
 
