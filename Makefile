@@ -1,4 +1,3 @@
-GRUB_THEMES=grub
 DEFAULT_BACKGROUND=desktop-background
 
 PIXMAPS=$(wildcard pixmaps/*.png)
@@ -12,7 +11,7 @@ build-emblems clean-emblems install-emblems:
 
 clean: clean-grub clean-emblems
 
-install: install-grub install-emblems install-local
+install: install-emblems install-local
 
 install-local:
 	# background files
