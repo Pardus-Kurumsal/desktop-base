@@ -48,8 +48,6 @@ install-local:
 	# Plymouth
 	install -d $(DESTDIR)/usr/share/plymouth/themes/runner
 	$(INSTALL) $(wildcard plymouth/runner/*) $(DESTDIR)/usr/share/plymouth/themes/runner
-	cd $(DESTDIR)/usr/share/desktop-base/plymouth/runner && ln -s /usr/share/plymouth/themes/runner plymouth
-	$(INSTALL) plymouth/plymouthd.defaults $(DESTDIR)/usr/share/desktop-base/plymouth
 
 
 	# Gray theme
