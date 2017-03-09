@@ -86,6 +86,10 @@ install-local:
 
 	# Blue theme
 	
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/blue-theme/login
+	$(INSTALL) $(wildcard blue-theme/login/*) $(DESTDIR)/usr/share/desktop-base/blue-theme/login
+	
 	### Wallpapers
 	install -d $(DESTDIR)/usr/share/desktop-base/blue-theme/wallpaper/contents/images
 	$(INSTALL) blue-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/blue-theme/wallpaper
