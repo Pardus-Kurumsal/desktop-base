@@ -11,6 +11,11 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
+yellowmountain 1280x1024.svg
+yellowmountain 1600x1200.svg
+yellowmountain 1920x1080.svg
+yellowmountain 1920x1200.svg
+yellowmountain 2560x1080.svg
 blue 1280x1024.svg
 blue 1600x1200.svg
 blue 1920x1080.svg
@@ -36,6 +41,7 @@ EOF
             desktop-background.xml \
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
+yellowmountain
 blue
 anger
 gray
@@ -52,6 +58,7 @@ EOF
             desktop-lockscreen.xml \
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
+yellowmountain
 blue
 EOF
     # *Last* remove *highest priority* alternative for active theme
@@ -66,6 +73,7 @@ EOF
             desktop-plasma5-wallpaper \
             /usr/share/desktop-base/$theme-theme/wallpaper
     done << EOF
+yellowmountain
 blue
 anger
 gray
@@ -83,6 +91,7 @@ EOF
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background
     done << EOF
+yellowmountain background.svg
 blue background.svg
 anger background.svg
 gray background.svg

@@ -75,6 +75,32 @@ install-local:
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/anger-theme/wallpaper Anger
 
 
+	# YellowMountain theme
+	
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/login
+	$(INSTALL) $(wildcard yellowmountain-theme/login/*) $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/login
+	
+	### Wallpapers
+	install -d $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/wallpaper/contents/images
+	$(INSTALL) yellowmountain-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/wallpaper
+	$(INSTALL) yellowmountain-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/wallpaper
+	$(INSTALL) $(wildcard yellowmountain-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/wallpaper/contents/images/
+	$(INSTALL) yellowmountain-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/yellowmountain.xml
+	# Wallpaper symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/yellowmountain-theme/wallpaper YellowMountain
+
+	### Lockscreen
+	install -d $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/lockscreen/contents/images
+	$(INSTALL) yellowmountain-theme/lockscreen/metadata.desktop $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/lockscreen
+	$(INSTALL) yellowmountain-theme/lockscreen/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/lockscreen
+	$(INSTALL) $(wildcard yellowmountain-theme/lockscreen/contents/images/*) $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/lockscreen/contents/images/
+	# Lock screen symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/yellowmountain-theme/lockscreen YellowMountainLockScreen
+
+
 	# Blue theme
 	
 	### Login background

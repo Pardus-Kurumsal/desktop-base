@@ -24,6 +24,7 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
             desktop-theme \
             /usr/share/desktop-base/$theme-theme $priority
     done << EOF
+yellowmountain 60
 blue 50
 anger 40
 gray 30
@@ -33,7 +34,7 @@ EOF
     update-alternatives --install \
         /usr/share/images/desktop-base/desktop-background \
         desktop-background \
-        /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg 70
+        /usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg 75
     # Alternatives for the background in theme packages
     while read theme filename priority; do
         update-alternatives --install \
@@ -48,13 +49,18 @@ anger 1920x1200.svg 60
 anger 2560x1080.svg 60
 blue 1280x1024.svg 65
 blue 1600x1200.svg 65
-blue 1920x1080.svg 70
+blue 1920x1080.svg 65
 blue 1920x1200.svg 65
 blue 2560x1080.svg 65
 gray 1600x1200.svg 55
 gray 1280x1024.svg 55
 gray 1920x1080.svg 55
 gray 1920x1200.svg 55
+yellowmountain 1280x1024.svg 70
+yellowmountain 1600x1200.svg 70
+yellowmountain 1920x1080.svg 75
+yellowmountain 1920x1200.svg 70
+yellowmountain 2560x1080.svg 70
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -71,6 +77,7 @@ EOF
             desktop-background.xml \
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
+yellowmountain 50
 blue 40
 anger 30
 gray 20
@@ -90,6 +97,7 @@ EOF
             desktop-lockscreen.xml \
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
+yellowmountain 50
 blue 40
 EOF
 
@@ -106,6 +114,7 @@ EOF
             desktop-plasma5-wallpaper \
             /usr/share/desktop-base/$theme-theme/wallpaper $priority
     done << EOF
+yellowmountain 50
 blue 40
 anger 30
 gray 20
@@ -122,6 +131,7 @@ EOF
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background $priority
     done << EOF
+yellowmountain background.svg 50
 blue background.svg 40
 anger background.svg 30
 gray background.svg 20
