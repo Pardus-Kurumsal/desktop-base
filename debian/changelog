@@ -1,3 +1,9 @@
+desktop-base (9.0.2pardus7) onyedi; urgency=medium
+
+  * Add new default theme Yellow Mountain
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 26 May 2017 16:42:45 +0300
+
 desktop-base (9.0.2pardus6) pardus; urgency=medium
 
   * Remove active-theme path for grub
