@@ -1,3 +1,9 @@
+desktop-base (9.0.2pardus9) onyedi; urgency=medium
+
+  * Fix syntax error on prerm script
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 29 May 2017 11:47:56 +0300
+
 desktop-base (9.0.2pardus8) onyedi; urgency=medium
 
   * Fix prerm syntax error
