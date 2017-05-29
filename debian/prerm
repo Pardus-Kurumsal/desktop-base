@@ -104,8 +104,7 @@ EOF
     # remove grub alternatives
     for background in \
           pardus-grub.png \
-          pardus-grub-1920x1080.png \          
-          ; do
+          pardus-grub-1920x1080.png; do
         update-alternatives --remove desktop-grub /usr/share/images/desktop-base/$background
     done
 
