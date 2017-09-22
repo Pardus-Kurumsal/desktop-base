@@ -1,3 +1,10 @@
+desktop-base (9.0.2pardus10) onyedi; urgency=medium
+
+  * Update Makefile
+  * Update xfce config defaults for desktop background
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 22 Sep 2017 16:17:11 +0300
+
 desktop-base (9.0.2pardus9) onyedi; urgency=medium
 
   * Fix syntax error on prerm script
