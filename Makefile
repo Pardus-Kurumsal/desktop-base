@@ -16,7 +16,8 @@ install: install-emblems install-local
 install-local:
 	# background files
 	mkdir -p $(DESTDIR)/usr/share/images/desktop-base
-	cd $(DESTDIR)/usr/share/images/desktop-base && ln -s $(DEFAULT_BACKGROUND) default
+	mkdir -p $(DESTDIR)/usr/share/backgrounds
+	cd $(DESTDIR)/usr/share/backgrounds && ln -s /usr/share/images/desktop-base/$(DEFAULT_BACKGROUND) default
 	# desktop files
 	mkdir -p $(DESTDIR)/usr/share/desktop-base
 	$(INSTALL) $(DESKTOPFILES) $(DESTDIR)/usr/share/desktop-base/
@@ -42,11 +43,11 @@ install-local:
 
 
 	# Gray theme
-	
+
 	### Login background
 	install -d $(DESTDIR)/usr/share/desktop-base/gray-theme/login
 	$(INSTALL) $(wildcard gray-theme/login/*) $(DESTDIR)/usr/share/desktop-base/gray-theme/login
-	
+
 	### Wallpapers
 	install -d $(DESTDIR)/usr/share/desktop-base/gray-theme/wallpaper/contents/images
 	$(INSTALL) gray-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/gray-theme/wallpaper
@@ -56,14 +57,15 @@ install-local:
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/gray-theme/wallpaper Gray
+	cd $(DESTDIR)/usr/share/backgrounds && ln -s /usr/share/desktop-base/gray-theme/wallpaper/contents/images/1920x1080.svg Gray.svg
 
 
 	# Anger theme
-	
+
 	### Login background
 	install -d $(DESTDIR)/usr/share/desktop-base/anger-theme/login
 	$(INSTALL) $(wildcard anger-theme/login/*) $(DESTDIR)/usr/share/desktop-base/anger-theme/login
-	
+
 	### Wallpapers
 	install -d $(DESTDIR)/usr/share/desktop-base/anger-theme/wallpaper/contents/images
 	$(INSTALL) anger-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/anger-theme/wallpaper
@@ -73,14 +75,15 @@ install-local:
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/anger-theme/wallpaper Anger
+	cd $(DESTDIR)/usr/share/backgrounds && ln -s /usr/share/desktop-base/anger-theme/wallpaper/contents/images/1920x1080.svg Anger.svg
 
 
 	# YellowMountain theme
-	
+
 	### Login background
 	install -d $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/login
 	$(INSTALL) $(wildcard yellowmountain-theme/login/*) $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/login
-	
+
 	### Wallpapers
 	install -d $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/wallpaper/contents/images
 	$(INSTALL) yellowmountain-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/yellowmountain-theme/wallpaper
@@ -102,11 +105,11 @@ install-local:
 
 
 	# Blue theme
-	
+
 	### Login background
 	install -d $(DESTDIR)/usr/share/desktop-base/blue-theme/login
 	$(INSTALL) $(wildcard blue-theme/login/*) $(DESTDIR)/usr/share/desktop-base/blue-theme/login
-	
+
 	### Wallpapers
 	install -d $(DESTDIR)/usr/share/desktop-base/blue-theme/wallpaper/contents/images
 	$(INSTALL) blue-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/blue-theme/wallpaper
@@ -116,6 +119,7 @@ install-local:
 	# Wallpaper symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/blue-theme/wallpaper Blue
+	cd $(DESTDIR)/usr/share/backgrounds && ln -s /usr/share/desktop-base/blue-theme/wallpaper/contents/images/1920x1080.svg Blue.svg
 
 	### Lockscreen
 	install -d $(DESTDIR)/usr/share/desktop-base/blue-theme/lockscreen/contents/images
@@ -125,7 +129,7 @@ install-local:
 	# Lock screen symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/blue-theme/lockscreen BlueLockScreen
-	
+
 	# Grub
 	$(INSTALL) grub/pardus-grub.png $(DESTDIR)/usr/share/images/desktop-base/
 	$(INSTALL) grub/pardus-grub-1920x1080.png $(DESTDIR)/usr/share/images/desktop-base/
