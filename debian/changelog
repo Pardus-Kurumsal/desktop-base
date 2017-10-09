@@ -1,3 +1,10 @@
+desktop-base (9.0.3pardus1) onyedi; urgency=medium
+
+  * Update control file
+  * Bump the version as 9.0.3pardus1 in order to have control over next version
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 09 Oct 2017 10:11:26 +0300
+
 desktop-base (9.0.2pardus10) onyedi; urgency=medium
 
   * Update Makefile
