@@ -1,7 +1,7 @@
 Source: desktop-base
 Section: x11
 Priority: optional
-Maintainer: Gustavo Franco <stratus@debian.org>
+Maintainer: Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
 Uploaders: Loïc Minier <lool@dooz.org>,
            Fathi Boudra <fabo@debian.org>,
            Yves-Alexis Perez <corsac@debian.org>,
@@ -19,7 +19,6 @@ Package: desktop-base
 Architecture: all
 Depends: librsvg2-common
 Pre-Depends: dpkg (>= 1.15.7.2~)
-Suggests: gnome | kde-standard | xfce4 | wmaker
 Description: common files for the Debian Desktop
  This package contains various miscellaneous files which are used by
  Debian Desktop installations.  Currently, it provides some
