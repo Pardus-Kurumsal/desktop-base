@@ -1,72 +1,74 @@
-desktop-base (9.0.3pardus1) onyedi; urgency=medium
+desktop-base (9.0.7) unstable; urgency=medium
 
-  * Update control file
-  * Bump the version as 9.0.3pardus1 in order to have control over next version
+  * Tentative fix for intermittent build failure when doing parallel builds.
 
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 09 Oct 2017 10:11:26 +0300
+ -- Aurélien COUDERC <zecoucou@free.fr>  Mon, 21 May 2018 14:12:48 +0200
 
-desktop-base (9.0.2pardus10) onyedi; urgency=medium
+desktop-base (9.0.6) unstable; urgency=medium
 
-  * Update Makefile
-  * Update xfce config defaults for desktop background
+  * First release with package sources migrated to git and
+    salsa.debian.org!
+    - Updated Vcs-* fields accordingly.
+    - Add gbp.conf configuration for native package tag names.
+    - Add README.contribute for how to contribute with git / salsa.
 
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 22 Sep 2017 16:17:11 +0300
+  * Improve detection of grub efi to choose default background ratio.
+  * Add a debian-theme theme for plymouth themes. This should help switching
+    the plymouth theme with the rest of the global theme.
+  * Try harder detecting if grub is used as bootloader before calling
+    update-grub. (Closes: #851893)
+  * Misspelled identifier gloabl should be global in softwaves.script.
+    (Closes: #898150)
 
-desktop-base (9.0.2pardus9) onyedi; urgency=medium
+  * Fix FTBFS due to make >= 4.2 being more picky on typos. (Closes: #897549)
+  * Bump debhelper version to 11, fix usage of install in Makefiles in the
+    move.
+  * Drop versioned pre-depends on dpkg for dpkg-maintscript-helper that has
+    been available in dpkg since wheezy.
+  * Use debian-desktop@l.d.o as Maintainer instead of Gustavo Franco; removed
+    Loïc Minier, Fathi Boudra and Eshat Cakar from uploaders. Thanks to all for
+    your past work on the package! (Closes: #879297)
+  * Bump Standards-Version to 4.1.4 (VCS-* fields already moved to secure URIs
+    with the migration to Salsa).
+  * Use Rules-Requires-Root: no
+  * Fix Lintian issues:
+    - unnecessary-testsuite-autopkgtest-header
+    - package-uses-deprecated-source-override-location
 
-  * Fix syntax error on prerm script
+ -- Aurélien COUDERC <zecoucou@free.fr>  Mon, 05 Mar 2018 10:20:26 +0100
 
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 29 May 2017 11:47:56 +0300
+desktop-base (9.0.5) unstable; urgency=medium
 
-desktop-base (9.0.2pardus8) onyedi; urgency=medium
+  * Ensure postinst doesn’t fails on upgrade even when an incomplete theme pack
+    is active. (Closes: #858643)
+  * Various check-all-the-things fixes.
 
-  * Fix prerm syntax error
+ -- Aurélien COUDERC <zecoucou@free.fr>  Sun, 02 Jul 2017 10:24:37 +0200
 
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 29 May 2017 10:06:46 +0300
+desktop-base (9.0.4) unstable; urgency=medium
 
-desktop-base (9.0.2pardus7) onyedi; urgency=medium
+  * Fix XML errors in some GNOME wallpaper description files.
+    (Closes: #862228)
+  * Build with debhelper, bump compatibility level to 10, drop CDBS build
+    dependency.
+  * Add autopkgtests to validate XMLs structure and avoid bugs like #862228.
 
-  * Add new default theme Yellow Mountain
+ -- Aurélien COUDERC <zecoucou@free.fr>  Tue, 27 Jun 2017 07:47:59 +0200
 
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 26 May 2017 16:42:45 +0300
+desktop-base (9.0.3) unstable; urgency=medium
 
-desktop-base (9.0.2pardus6) pardus; urgency=medium
+  * Fix a few problems in maintainer scripts, thanks Raphaël Hertzog for the
+    detailed review.
+    No change in behaviour but it will make the scripts more readable and
+    maintainable.
+    - preinst: reorganize if conditions for package version detection in a
+               readable order.
+    - prerm: remove references to non existing $priority variable in loops.
+    - prerm: no need to remove secondary alternatives just before removing
+             a main alternative. Secondary are removed in the process anyway.
+    (Closes: #853224)
 
-  * Remove active-theme path for grub
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 17:39:09 +0300
-
-desktop-base (9.0.2pardus5) pardus; urgency=medium
-
-  * Add missing line about login screen of blue-theme
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 17:00:35 +0300
-
-desktop-base (9.0.2pardus4) pardus; urgency=medium
-
-  * Fix directory name problem in main Makefile
-  * Remove the line that creates soft link
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 16:42:15 +0300
-
-desktop-base (9.0.2pardus3) pardus; urgency=medium
-
-  * Fix Makefile destination bug
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 16:26:17 +0300
-
-desktop-base (9.0.2pardus2) pardus; urgency=medium
-
-  * Make major changes in order to fallow upstream changes
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 09 Mar 2017 16:19:57 +0300
-
-desktop-base (9.0.2pardus1) pardus; urgency=medium
-
-  * Apply previous changes for pardus
-  * Add .drone.yml
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 17 Feb 2017 11:40:19 +0300
+ -- Aurélien COUDERC <zecoucou@free.fr>  Mon, 30 Jan 2017 22:21:40 +0100
 
 desktop-base (9.0.2) unstable; urgency=medium
 
@@ -130,7 +132,7 @@ desktop-base (9.0.0~exp1) experimental; urgency=medium
   [ Aurélien COUDERC ]
   * Initial support for Soft Waves theme by Juliette Belin.
     - Default theme for GRUB (Closes: #598776, #773369)
-    - Default theme for Gnome wallpaper and lock screen
+    - Default theme for GNOME wallpaper and lock screen
     - Default theme for Plasma 5 wallpaper (Closes: #831730)
     - Theme available for SDDM login and lock screen
     - debian/copyright updated
@@ -145,7 +147,7 @@ desktop-base (9.0.0~exp1) experimental; urgency=medium
     - Can be configured with alternatives (also works in lightdm).
    (Closes: #415064, #608523, #611170, #670866, #762276)
   * Remove deprecated ksplash and kdm from KDE4. (Closes: #607842)
-  * Remove deprecated splash options from Gnome 2.
+  * Remove deprecated splash options from GNOME 2.
   * Some cleanup in maintainer scripts to correctly handle alternatives.
     (Closes: #773404)
 
@@ -157,108 +159,6 @@ desktop-base (9.0.0~exp1) experimental; urgency=medium
   * Also use Debian wallpaper for second monitor on Xfce.       closes: #785371
 
  -- Yves-Alexis Perez <corsac@debian.org>  Mon, 07 Nov 2016 21:32:30 +0100
-
-desktop-base (8.0.2pardus13) pardus; urgency=medium
-
-  * Update pardus-grub png for visual compatibility
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Wed, 15 Feb 2017 10:12:40 +0300
-
-desktop-base (8.0.2pardus12) pardus; urgency=medium
-
-  * Add blue wallpapers into kde-wallpaper directory and update Makefile
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 12 Dec 2016 09:50:04 +0300
-
-desktop-base (8.0.2pardus11) pardus; urgency=medium
-
-  * Revert changes for pardus from profiles directory
-  * Modify Makefile and revert installing xdg-config changes
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 27 Oct 2016 17:50:46 +0300
-
-desktop-base (8.0.2pardus10) pardus; urgency=medium
-
-  * Add blue backgrounds
-  * Make blue background default
-  * Change login screen background
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 15:42:02 +0300
-
-desktop-base (8.0.2pardus9) pardus; urgency=medium
-
-  * Fix desktop background issue
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 11:40:58 +0300
-
-desktop-base (8.0.2pardus8) pardus; urgency=medium
-
-  * Update xfce config xmls
-  * Decrease workspace_count config
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 21 Nov 2016 11:04:46 +0300
-
-desktop-base (8.0.2pardus7) pardus; urgency=medium
-
-  * Add xfce4 config files for pardus
-  * Update Makefile for xfce4 configs
-  * Update gsettings override for gnome lockscreen
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 18 Nov 2016 12:02:51 +0300
-
-desktop-base (8.0.2pardus6) pardus; urgency=medium
-
-  * Update plymouth runner theme logo and postinst script
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Tue, 08 Nov 2016 15:19:09 +0300
-
-desktop-base (8.0.2pardus5) pardus; urgency=medium
-
-  * Remove debian icons and add pardus icons
-  * Change desktop files
-  * Remove debian's wallpapers source files and add pardus ones
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 07 Nov 2016 12:12:17 +0300
-
-desktop-base (8.0.2pardus4) pardus; urgency=medium
-
-  * Add plymouth theme runner
-  * Remove old plymouth themes
-  * Update Makefile for runner plymouth theme
-  * Add pardus-splash.png
-  * Remove debian's splash files
-  * Update  postinst for splash image
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 07 Nov 2016 11:03:26 +0300
-
-desktop-base (8.0.2pardus3) pardus; urgency=medium
-
-  * Remove debian wallpapers and Add Pardus wallpapers
-  * Update anger wallpaper workart
-  * Update postinst script for new backgrounds
-  * Update gnome-backgrounds.xml for new wallpapers
-  * Update kde-wallpaper directory for new backgrounds
-  * Update background.svg under login directory
-  * Update Makefile for kde-wallpapers
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 03 Nov 2016 16:14:58 +0300
-
-desktop-base (8.0.2pardus2) pardus; urgency=medium
-
-  * Update hd grub background
-  * Update Makefile for grub and remove debian grub backgrounds
-  * Update postinst script for grub
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 03 Nov 2016 15:26:01 +0300
-
-desktop-base (8.0.2pardus1) pardus; urgency=medium
-
-  * Add .drone.yml
-  * Add grub images into grub directory
-  * Update makefile according to new grub files
-  * Update postinst script according to pardus grub files
-
- -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 03 Nov 2016 10:49:09 +0300
 
 desktop-base (8.0.2) unstable; urgency=medium
 
@@ -313,7 +213,7 @@ desktop-base (8.0.0~exp1) experimental; urgency=low
 
   [ Yves-Alexis Perez ]
   * Initial support for Lines theme by Juliette Belin.
-    - add the various ratio SVG wallpapers to backgrounds/ 
+    - add the various ratio SVG wallpapers to backgrounds/
     - debian/{postinst,prerm}: update alternatives priority to make Lines the
       automatic/default one
     - gdm3/background.svg updated to use Lines login screen
@@ -333,7 +233,7 @@ desktop-base (7.0.3) unstable; urgency=low
     - Don't cut off the last hostname letter.
     - Adjust font sizes and colors.
   * Ksplash: don't cut off blurred icons.
-  * Reduce opacity of debian swirl in gdm/kdm background to be
+  * Reduce opacity of Debian swirl in gdm/kdm background to be
     less distracting.
 
   [ Paul Tagliamonte ]
@@ -347,7 +247,7 @@ desktop-base (7.0.3) unstable; urgency=low
 
 desktop-base (7.0.2) unstable; urgency=low
 
-  * Droped the ${misc:Depends}, as Yves-Alexis pointed out, it drags in dconf
+  * Dropped the ${misc:Depends}, as Yves-Alexis pointed out, it drags in dconf
     without a reason.
 
  -- Paul Tagliamonte <paultag@debian.org>  Mon, 30 Jul 2012 19:43:20 -0400
@@ -357,7 +257,7 @@ desktop-base (7.0.1) unstable; urgency=low
   [ Eshat Cakar ]
   * Make 1366x768 ksplash background really that resolution. (Closes: #679306)
   * Fix typo in plymouth theme. (Closes: #679357)
-  * Updated ink-splated kde wallpaper, to fix alignment issues.
+  * Updated ink-splated KDE wallpaper, to fix alignment issues.
 
   [ Paul Tagliamonte ]
   * Add ${misc:Depends} to the Depends for the binary package. We're using
@@ -374,7 +274,7 @@ desktop-base (7.0.0) unstable; urgency=low
   * Updated the KDM theme.
   * Updated the ksplash theme.
   * Install Joy wallpapers into /usr/share/wallpapers/
-    This makes them visibile in KDE's wallpaper chooser
+    This makes them visible in KDE's wallpaper chooser
   * Set default wallpaper for new users via plasma scripting
 
   [ Paul Tagliamonte ]
@@ -432,9 +332,9 @@ desktop-base (6.0.7) unstable; urgency=low
 
   [ Josselin Mouette ]
   * Build-depend on recent cdbs+debhelper to have dh_installgsettings.
-  * debian/gsettings-override: set the default background using 
+  * debian/gsettings-override: set the default background using
     GSettings.
-  * xy_desktop-base.gschema.override: configure the default background 
+  * xy_desktop-base.gschema.override: configure the default background
     for gdm3 using GSettings as well.
   * All of this closes: #623094.
   * Add myself to uploaders.
@@ -489,7 +389,7 @@ desktop-base (6.0.3) unstable; urgency=low
     - don't set image-style property, default to auto.          closes: #523150
   * cleanup debian/copyright for removed stuff.                 closes: #594533
   * debian/pixmaps:
-    - debian-security updated, thanks to Ulrich Hansen.         closes: #389155 
+    - debian-security updated, thanks to Ulrich Hansen.         closes: #389155
   * DFSG-ify artwork:                                           closes: #587668
     - various themes, thanks to Ulrich Hansen.
     - SpaceFun theme, thanks to Valessio Brito.
@@ -561,10 +461,10 @@ desktop-base (6.0.0) unstable; urgency=low
       written to disk.
   * debian/prerm:
     - rename grub alternative to add png extension.
-  * Makefile: 
+  * Makefile:
     - drop unused rules for KDE3 and Xfce 4.4.
     - add SpaceFun gdm3 theme.
-    - add SpaceFun kdm theme. 
+    - add SpaceFun kdm theme.
     - install grub theme and script.
   * {ksplash,kdm}-theme/moreblue-orbit{-default}:
     - drop “Debian” word from image to only use DFSG-free logo. closes: #587668
@@ -606,7 +506,7 @@ desktop-base (5.0.3) unstable; urgency=medium
   * debian/preinst:
     - handle upgrade in various cases: (/etc/splashy/themes symlink or not,
       and changed or unchanged themes files)
-  * debian/README.Debian: 
+  * debian/README.Debian:
     - announce the change.
     - tell user how to enable MoreBlue orbit theme if splashy is installed
       after desktop-base.
@@ -713,7 +613,7 @@ desktop-base (4.0.4) unstable; urgency=low
 
 desktop-base (4.0.3) unstable; urgency=low
 
-  * Fix kde default wallpaper appearance between kdm to ksplash switch.
+  * Fix KDE default wallpaper appearance between kdm to ksplash switch.
 
  -- Fathi Boudra <fboudra@free.fr>  Thu, 24 May 2007 01:22:06 +0200
 

@@ -1,24 +1,22 @@
 Source: desktop-base
 Section: x11
 Priority: optional
-Maintainer: Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
-Uploaders: Loïc Minier <lool@dooz.org>,
-           Fathi Boudra <fabo@debian.org>,
-           Yves-Alexis Perez <corsac@debian.org>,
+Maintainer: Debian Desktop Team <debian-desktop@lists.debian.org>
+Uploaders: Yves-Alexis Perez <corsac@debian.org>,
            Josselin Mouette <joss@debian.org>,
            Paul Tagliamonte <paultag@debian.org>,
-           Eshat Cakar <info@eshat.de>,
            Aurélien COUDERC <zecoucou@free.fr>
-Build-Depends: cdbs (>= 0.4.93), debhelper (>= 9), librsvg2-bin
-Standards-Version: 3.9.8
-Homepage: http://www.debian.org/devel/debian-desktop
-Vcs-Browser: https://anonscm.debian.org/viewvc/debian-desktop/packages/trunk/desktop-base
-Vcs-Svn: svn://anonscm.debian.org/debian-desktop/packages/trunk/desktop-base
+Build-Depends: debhelper (>= 11), librsvg2-bin
+Rules-Requires-Root: no
+Standards-Version: 4.1.4
+Homepage: https://www.debian.org/devel/debian-desktop/
+Vcs-Browser: https://salsa.debian.org/debian-desktop-team/desktop-base
+Vcs-Git: https://salsa.debian.org/debian-desktop-team/desktop-base.git
 
 Package: desktop-base
 Architecture: all
 Depends: librsvg2-common
-Pre-Depends: dpkg (>= 1.15.7.2~)
+Suggests: gnome | kde-standard | xfce4 | wmaker
 Description: common files for the Debian Desktop
  This package contains various miscellaneous files which are used by
  Debian Desktop installations.  Currently, it provides some
