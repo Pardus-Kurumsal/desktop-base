@@ -1,14 +1,14 @@
 Source: desktop-base
 Section: x11
 Priority: optional
-Maintainer: Debian Desktop Team <debian-desktop@lists.debian.org>
+Maintainer: Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
 Uploaders: Yves-Alexis Perez <corsac@debian.org>,
            Josselin Mouette <joss@debian.org>,
            Paul Tagliamonte <paultag@debian.org>,
            Aurélien COUDERC <zecoucou@free.fr>
-Build-Depends: debhelper (>= 11), librsvg2-bin
+Build-Depends: debhelper (>= 9), librsvg2-bin
 Rules-Requires-Root: no
-Standards-Version: 4.1.4
+Standards-Version: 3.9.8
 Homepage: https://www.debian.org/devel/debian-desktop/
 Vcs-Browser: https://salsa.debian.org/debian-desktop-team/desktop-base
 Vcs-Git: https://salsa.debian.org/debian-desktop-team/desktop-base.git
@@ -16,7 +16,7 @@ Vcs-Git: https://salsa.debian.org/debian-desktop-team/desktop-base.git
 Package: desktop-base
 Architecture: all
 Depends: librsvg2-common
-Suggests: gnome | kde-standard | xfce4 | wmaker
+Pre-Depends: dpkg (>= 1.15.7.2~)
 Description: common files for the Debian Desktop
  This package contains various miscellaneous files which are used by
  Debian Desktop installations.  Currently, it provides some

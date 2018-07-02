@@ -24,11 +24,7 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
             desktop-theme \
             /usr/share/desktop-base/$theme-theme $priority
     done << EOF
-softwaves 50
-lines 40
-joy 30
-joy-inksplat 30
-spacefun 30
+runner 50
 EOF
 
     # Use active theme as highest priority for background
@@ -45,34 +41,16 @@ EOF
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
-softwaves 1024x768.svg 65
-softwaves 1280x720.svg 65
-softwaves 1280x800.svg 65
-softwaves 1280x1024.svg 65
-softwaves 1600x1200.svg 65
-softwaves 1920x1080.svg 65
-softwaves 1920x1200.svg 65
-softwaves 2560x1440.svg 65
-softwaves 2560x1600.svg 65
-lines 1280x1024.svg 60
-lines 1600x1200.svg 60
-lines 1920x1080.svg 60
-lines 1920x1200.svg 60
-lines 2560x1080.svg 60
-joy 1280x720.svg 50
-joy 1280x1024.svg 50
-joy 1600x1200.svg 50
-joy 1920x1080.svg 50
-joy 1920x1200.svg 50
-joy-inksplat 1280x720.svg 50
-joy-inksplat 1280x1024.svg 50
-joy-inksplat 1600x1200.svg 50
-joy-inksplat 1920x1080.svg 50
-joy-inksplat 1920x1200.svg 50
-spacefun 1280x720.svg 50
-spacefun 1280x1024.svg 50
-spacefun 1920x1080.svg 50
-spacefun 1920x1200.svg 50
+runner 1024x768.svg 65
+runner 1280x1024.svg 65
+runner 1280x720.svg 65
+runner 1280x800.svg 65
+runner 1600x1200.svg 65
+runner 1920x1080.svg 75
+runner 1920x1200.svg 65
+runner 2560x1440.svg 65
+runner 2560x1600.svg 65
+runner 3840x2160.svg 65
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -91,11 +69,7 @@ EOF
             desktop-background.xml \
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
-softwaves 40
-lines 30
-joy 20
-joy-inksplat 20
-spacefun 20
+runner 40
 EOF
 
     # Set up an alternative for the XML version of the lock screen
@@ -114,10 +88,7 @@ EOF
             desktop-lockscreen.xml \
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
-softwaves 40
-lines 30
-joy 20
-spacefun 20
+runner 40
 EOF
 
     # Set up an alternative for the wallpaper for Plasma 5/KDE
@@ -135,11 +106,7 @@ EOF
             desktop-plasma5-wallpaper \
             /usr/share/desktop-base/$theme-theme/wallpaper $priority
     done << EOF
-softwaves 40
-lines 30
-joy 20
-joy-inksplat 20
-spacefun 20
+runner 40
 EOF
 
     # Login theme
@@ -155,11 +122,7 @@ EOF
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background $priority
     done << EOF
-softwaves background.svg 40
-lines background.svg 30
-lines background-nologo.svg 30
-joy background.svg 20
-spacefun background.svg 20
+runner background.svg 40
 EOF
 
     # Set up an alternative for the GRUB background/colors config
@@ -202,14 +165,8 @@ EOF
             desktop-grub.sh \
             /usr/share/desktop-base/$theme-theme/grub/grub_background.sh
     done << EOF
-softwaves 4x3 40
-softwaves 16x9 40
-lines 4x3 30
-lines 16x9 30
-joy 4x3 30
-joy 16x9 30
-spacefun 4x3 30
-spacefun 16x9 30
+runner 4x3 40
+runner 16x9 40
 EOF
 
     # Apply GRUB background update into /boot
