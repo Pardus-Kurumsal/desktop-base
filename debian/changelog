@@ -1,3 +1,9 @@
+desktop-base (9.0.7pardus1) unstable; urgency=medium
+
+  * Make changes Pardus specific
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Mon, 02 Jul 2018 14:49:13 +0300
+
 desktop-base (9.0.7) unstable; urgency=medium
 
   * Tentative fix for intermittent build failure when doing parallel builds.
