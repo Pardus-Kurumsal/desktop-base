@@ -1,3 +1,9 @@
+desktop-base (10.0.19pardus1) unstable; urgency=medium
+
+  * Remove debian themes, put Pardus ones, Make branding for Pardus
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Tue, 09 Apr 2019 12:32:26 +0300
+
 desktop-base (10.0.0) unstable; urgency=medium
 
   * Add Buster’s default theme futurePrototype by Alex Makas.
