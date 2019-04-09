@@ -1,7 +1,7 @@
 Source: desktop-base
 Section: x11
 Priority: optional
-Maintainer: Debian Desktop Team <debian-desktop@lists.debian.org>
+Maintainer: Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
 Uploaders: Yves-Alexis Perez <corsac@debian.org>,
            Josselin Mouette <joss@debian.org>,
            Paul Tagliamonte <paultag@debian.org>,
@@ -9,7 +9,6 @@ Uploaders: Yves-Alexis Perez <corsac@debian.org>,
 Build-Depends: debhelper (>= 11),
                librsvg2-bin,
                optipng,
-# For the number in debian-logo-text
                fonts-quicksand
 Rules-Requires-Root: no
 Standards-Version: 4.3.0
@@ -20,11 +19,11 @@ Vcs-Git: https://salsa.debian.org/debian-desktop-team/desktop-base.git
 Package: desktop-base
 Architecture: all
 Depends: librsvg2-common
-Suggests: gnome | kde-standard | xfce4 | wmaker
-Description: common files for the Debian Desktop
+Suggests: gnome | xfce4
+Description: common files for the Pardus Desktop
  This package contains various miscellaneous files which are used by
- Debian Desktop installations.  Currently, it provides some
- Debian-related artwork and themes, .desktop files containing links to
- Debian related material (suitable for placement on a user's desktop),
+ Pardus Desktop installations.  Currently, it provides some
+ Pardus-related artwork and themes, .desktop files containing links to
+ Pardus related material (suitable for placement on a user's desktop),
  and other common files between the available desktop environments
  such as GNOME and KDE.

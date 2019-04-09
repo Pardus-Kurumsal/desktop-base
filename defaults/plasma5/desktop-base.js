@@ -26,8 +26,7 @@ for (i in d) {
         if (!d[i].readConfig('Image')) {
             // Only set up the wallpaper if the wallpaper image is empty (=default).
             // Otherwise it means the user selected a picture and we don’t want to override that.
-            d[i].writeConfig('Image', 'DebianTheme');
+            d[i].writeConfig('Image', 'PardusTheme');
         }
     }
 }
-

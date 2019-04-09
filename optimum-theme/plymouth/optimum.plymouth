@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=optimum
+Description=Optimum playmouth theme.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/optimum
+ScriptFile=/usr/share/plymouth/themes/optimum/optimum.script

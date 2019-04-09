@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Contact: Debian Desktop List <debian-desktop@lists.debian.org>
-Source: https://salsa.debian.org/debian-desktop-team/desktop-base/
+Source: http://vcs.pardus.org.tr/ondokuz/desktop-base/
 
 Files: *
 Copyright: 2002, Colin Walters <walters@debian.org>
@@ -12,74 +12,23 @@ Copyright: 2002, Colin Walters <walters@debian.org>
            2006-2016, Yves-Alexis Perez <corsac@debian.org>
            2012, Eshat Cakar <info@eshat.de>
            2012, Paul Tagliamonte <paultag@debian.org>
-           2014-2019, Aurélien COUDERC <coucouf@debian.org>
+           2014-2018, Aurélien COUDERC <coucouf@debian.org>
+           2019, Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
 License: GPL-2+
 
-Files: pixmaps/debian-security.png
-       source/debian-security.xcf
-Copyright: 1999, Software in the Public Interest, Inc.
-           2010, Ulrich Hansen <uhansen@mainz-online.de>
+Files: pixmaps/pardus-security.png
+       source/pardus-security.xcf
+Copyright: 2003, TUBİTAK ULAKBİM
 License: GPL-2+
 
-Files: spacefun-theme/*
-Copyright: 2010, Valessio Brito <valessio@debianart.org>
-License: GPL-2
-
-Files: spacefun-theme/plymouth/spacefun.script
-Copyright: 2010, Aurélien COUDERC <coucouf@debian.org>
+Files: runner-theme/*
+       optimum-theme/*
+Copyright: 2017-2019, Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
 License: GPL-2+
 
-Files: joy-theme/*
-Copyright: 2012, Adrien Aubourg <adrien.aubourg@gmail.com>
-License: GPL-2+
-
-Files: lines-theme/*
-       softwaves-theme/*
-       moonlight-theme/*
-Copyright: 2014-2018, Juliette Taka Belin <juliette.belin@logilab.fr>
-License: GPL-2+
-
-Files: futureprototype-theme/*
-Copyright: 2018, Alex Makas <radicalmonday@gmail.com>
-License: GPL-2+
-
-Files: joy-theme/plymouth/joy.script
-Copyright: 2009, Canonical Ltd.
-           2010, Aurélien Couderc <coucouf@debian.org>
-           2012, Jonathan Carter <jcc@debian.org>
-License: GPL-2+
-
-Files: lines-theme/plymouth/lines.script
-       softwaves-theme/plymouth/softwaves.script
-       futureprototype-theme/plymouth/futureprototype.script
-       moonlight-theme/plymouth/moonlight.script
-Copyright: 2009 Canonical Ltd.
-           2010-2016 Aurélien Couderc <coucouf@debian.org>
-           2014-2018 Juliette Taka <juliette.belin@logilab.fr>
-License: GPL-2+
-
-Files: spacefun-theme/plymouth/logo.png
-       joy-theme/plymouth/debian_logo*
-       lines-theme/plymouth/debian.png
-       softwaves-theme/plymouth/debian.png
-       softwaves-theme/plymouth/logo*.png
-       softwaves-theme/sources/plymouth/debian9.svg
-       softwaves-theme/sources/plymouth/logo*.svg
-       emblems-debian/emblem-debian*
-       source/salsa-debian-icon.svg
-       futureprototype-theme/plymouth/debian.png
-       futureprototype-theme/plymouth/logo*.png
-       futureprototype-theme/sources/plymouth/debian.svg
-       futureprototype-theme/sources/plymouth/logo.svg
-       moonlight-theme/plymouth/debian.png
-       debian-logos/*
-Copyright: 1999, Software in the Public Interest, Inc.
-License: GPL-3+ or CC-BY-SA-3.0
-
-Files: moonlight-theme/plymouth/logo_in_circle.png
-       moonlight-theme/sources/plymouth/logo.svg
-Copyright: 1999, Software in the Public Interest, Inc.
-           2018 Juliette Taka <juliette.belin@logilab.fr>
+Files: emblems-pardus/*
+       pardus-logos/*
+Copyright: 2003, TUBİTAK ULAKBİM
 License: GPL-3+ or CC-BY-SA-3.0
 
 License: CC-BY-SA-3.0
@@ -409,7 +358,7 @@ License: GPL-2
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
  version 2 as published by the Free Software Foundation.
- . 
+ .
  This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -420,7 +369,7 @@ License: GPL-2
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  02110-1301, USA.
  .
- On Debian systems, the full text of the GNU General Public
+ On Pardus systems, the full text of the GNU General Public
  License version 2 can be found in the file
  `/usr/share/common-licenses/GPL-2’.
 
@@ -432,13 +381,13 @@ License: GPL-2+
  .
  This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
  .
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  .
- On Debian systems, the full text of the GNU General Public
+ On Pardus systems, the full text of the GNU General Public
  License version 2 can be found in the file
  `/usr/share/common-licenses/GPL-2’.
 
@@ -456,7 +405,6 @@ License: GPL-3+
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  .
- On Debian systems, the full text of the GNU General Public
+ On Pardus systems, the full text of the GNU General Public
  License version 3 can be found in the file
  `/usr/share/common-licenses/GPL-3’.
-

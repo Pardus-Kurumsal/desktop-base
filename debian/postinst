@@ -21,43 +21,43 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
     update-alternatives --install \
             /usr/share/images/vendor-logos \
             vendor-logos \
-            /usr/share/desktop-base/debian-logos 50 \
+            /usr/share/desktop-base/pardus-logos 50 \
             --slave /usr/share/icons/vendor/64x64/emblems/emblem-vendor.png \
                 emblem-vendor-64 \
-                /usr/share/icons/desktop-base/64x64/emblems/emblem-debian.png \
+                /usr/share/icons/desktop-base/64x64/emblems/emblem-pardus.png \
             --slave /usr/share/icons/vendor/128x128/emblems/emblem-vendor.png \
                 emblem-vendor-128 \
-                /usr/share/icons/desktop-base/128x128/emblems/emblem-debian.png \
+                /usr/share/icons/desktop-base/128x128/emblems/emblem-pardus.png \
             --slave /usr/share/icons/vendor/256x256/emblems/emblem-vendor.png \
                 emblem-vendor-256 \
-                /usr/share/icons/desktop-base/256x256/emblems/emblem-debian.png \
+                /usr/share/icons/desktop-base/256x256/emblems/emblem-pardus.png \
             --slave /usr/share/icons/vendor/scalable/emblems/emblem-vendor.svg \
                 emblem-vendor-scalable \
-                /usr/share/icons/desktop-base/scalable/emblems/emblem-debian.svg \
+                /usr/share/icons/desktop-base/scalable/emblems/emblem-pardus.svg \
             --slave /usr/share/icons/vendor/64x64/emblems/emblem-vendor-symbolic.png \
                 emblem-vendor-symbolic-64 \
-                /usr/share/icons/desktop-base/64x64/emblems/emblem-debian-symbolic.png \
+                /usr/share/icons/desktop-base/64x64/emblems/emblem-pardus-symbolic.png \
             --slave /usr/share/icons/vendor/128x128/emblems/emblem-vendor-symbolic.png \
                 emblem-vendor-symbolic-128 \
-                /usr/share/icons/desktop-base/128x128/emblems/emblem-debian-symbolic.png \
+                /usr/share/icons/desktop-base/128x128/emblems/emblem-pardus-symbolic.png \
             --slave /usr/share/icons/vendor/256x256/emblems/emblem-vendor-symbolic.png \
                 emblem-vendor-symbolic-256 \
-                /usr/share/icons/desktop-base/256x256/emblems/emblem-debian-symbolic.png \
+                /usr/share/icons/desktop-base/256x256/emblems/emblem-pardus-symbolic.png \
             --slave /usr/share/icons/vendor/scalable/emblems/emblem-vendor-symbolic.svg \
                 emblem-vendor-symbolic-scalable \
-                /usr/share/icons/desktop-base/scalable/emblems/emblem-debian-symbolic.svg \
+                /usr/share/icons/desktop-base/scalable/emblems/emblem-pardus-symbolic.svg \
             --slave /usr/share/icons/vendor/64x64/emblems/emblem-vendor-white.png \
                 emblem-vendor-white-64 \
-                /usr/share/icons/desktop-base/64x64/emblems/emblem-debian-white.png \
+                /usr/share/icons/desktop-base/64x64/emblems/emblem-pardus-white.png \
             --slave /usr/share/icons/vendor/128x128/emblems/emblem-vendor-white.png \
                 emblem-vendor-white-128 \
-                /usr/share/icons/desktop-base/128x128/emblems/emblem-debian-white.png \
+                /usr/share/icons/desktop-base/128x128/emblems/emblem-pardus-white.png \
             --slave /usr/share/icons/vendor/256x256/emblems/emblem-vendor-white.png \
                 emblem-vendor-white-256 \
-                /usr/share/icons/desktop-base/256x256/emblems/emblem-debian-white.png \
+                /usr/share/icons/desktop-base/256x256/emblems/emblem-pardus-white.png \
             --slave /usr/share/icons/vendor/scalable/emblems/emblem-vendor-white.svg \
                 emblem-vendor-white-scalable \
-                /usr/share/icons/desktop-base/scalable/emblems/emblem-debian-white.svg
+                /usr/share/icons/desktop-base/scalable/emblems/emblem-pardus-white.svg
 
     # Theme package alternatives
     while read theme priority; do
@@ -66,13 +66,8 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
             desktop-theme \
             /usr/share/desktop-base/$theme-theme $priority
     done << EOF
-futureprototype 50
-moonlight 40
-softwaves 40
-lines 40
-joy 40
-joy-inksplat 40
-spacefun 40
+optimum 50
+runner 40
 EOF
 
     # Use active theme as highest priority for background
@@ -89,36 +84,17 @@ EOF
             desktop-background \
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
-futureprototype 1920x1080.svg 65
-moonlight 1920x1080.svg 65
-softwaves 1024x768.svg 50
-softwaves 1280x720.svg 50
-softwaves 1280x800.svg 50
-softwaves 1280x1024.svg 50
-softwaves 1600x1200.svg 50
-softwaves 1920x1080.svg 50
-softwaves 1920x1200.svg 50
-softwaves 2560x1440.svg 50
-softwaves 2560x1600.svg 50
-lines 1280x1024.svg 50
-lines 1600x1200.svg 50
-lines 1920x1080.svg 50
-lines 1920x1200.svg 50
-lines 2560x1080.svg 50
-joy 1280x720.svg 50
-joy 1280x1024.svg 50
-joy 1600x1200.svg 50
-joy 1920x1080.svg 50
-joy 1920x1200.svg 50
-joy-inksplat 1280x720.svg 50
-joy-inksplat 1280x1024.svg 50
-joy-inksplat 1600x1200.svg 50
-joy-inksplat 1920x1080.svg 50
-joy-inksplat 1920x1200.svg 50
-spacefun 1280x720.svg 50
-spacefun 1280x1024.svg 50
-spacefun 1920x1080.svg 50
-spacefun 1920x1200.svg 50
+optimum 1920x1080.svg 65
+runner 1024x768.svg 50
+runner 1280x720.svg 50
+runner 1280x800.svg 50
+runner 1280x1024.svg 50
+runner 1600x1200.svg 50
+runner 1920x1080.svg 50
+runner 1920x1200.svg 50
+runner 2560x1440.svg 50
+runner 2560x1600.svg 50
+runner 3840x2160.svg 50
 EOF
 
     # Set up an alternative for the XML version of the background
@@ -137,13 +113,8 @@ EOF
             desktop-background.xml \
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
-futureprototype 40
-moonlight 30
-softwaves 30
-lines 30
-joy 30
-joy-inksplat 30
-spacefun 30
+optimum 40
+runner 30
 EOF
 
     # Set up an alternative for the XML version of the lock screen
@@ -162,12 +133,8 @@ EOF
             desktop-lockscreen.xml \
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
-futureprototype 40
-moonlight 30
-softwaves 30
-lines 30
-joy 30
-spacefun 30
+optimum 40
+runner 30
 EOF
 
     # Set up an alternative for the wallpaper for Plasma 5/KDE
@@ -175,23 +142,18 @@ EOF
     active_plasma_wallpaper=/usr/share/desktop-base/active-theme/wallpaper
     if [ -e ${active_plasma_wallpaper} ]; then
         update-alternatives --install \
-            /usr/share/wallpapers/DebianTheme \
+            /usr/share/wallpapers/PardusTheme \
             desktop-plasma5-wallpaper ${active_plasma_wallpaper} 50
     fi
     # Alternatives for theme packages
     while read theme priority; do
         update-alternatives --install \
-            /usr/share/wallpapers/DebianTheme \
+            /usr/share/wallpapers/PardusTheme \
             desktop-plasma5-wallpaper \
             /usr/share/desktop-base/$theme-theme/wallpaper $priority
     done << EOF
-futureprototype 40
-moonlight 30
-softwaves 30
-lines 30
-joy 30
-joy-inksplat 30
-spacefun 30
+optimum 40
+runner 30
 EOF
 
     # Login theme
@@ -207,13 +169,8 @@ EOF
             desktop-login-background \
             /usr/share/desktop-base/$theme-theme/login/$background $priority
     done << EOF
-futureprototype background.svg 40
-moonlight background.svg 40
-softwaves background.svg 30
-lines background.svg 30
-lines background-nologo.svg 30
-joy background.svg 30
-spacefun background.svg 30
+optimum background.svg 40
+runner background.svg 30
 EOF
 
     # Set up an alternative for the GRUB background/colors config
@@ -256,18 +213,10 @@ EOF
             desktop-grub.sh \
             /usr/share/desktop-base/$theme-theme/grub/grub_background.sh
     done << EOF
-futureprototype 4x3 40
-futureprototype 16x9 40
-moonlight 4x3 30
-moonlight 16x9 30
-softwaves 4x3 30
-softwaves 16x9 30
-lines 4x3 30
-lines 16x9 30
-joy 4x3 30
-joy 16x9 30
-spacefun 4x3 30
-spacefun 16x9 30
+optimum 4x3 40
+optimum 16x9 40
+runner 4x3 30
+runner 16x9 30
 EOF
 
     # Apply GRUB background update into /boot
