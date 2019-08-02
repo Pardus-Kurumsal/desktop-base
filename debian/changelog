@@ -1,3 +1,10 @@
+desktop-base (10.0.19pardus6) unstable; urgency=medium
+
+  * Add purple theme and make it default
+  * Bump version to 10.0.19pardus6
+
+ -- Yunusemre Şentürk <se.yunusemre@gmail.com>  Fri, 02 Aug 2019 16:52:05 +0300
+
 desktop-base (10.0.19pardus3) unstable; urgency=medium
 
   * Pre convert png files since conversion while building breaks the appereance
