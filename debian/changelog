@@ -1,3 +1,9 @@
+desktop-base (10.0.19pardus7) unstable; urgency=medium
+
+  * Fix typo in plymouth theme name
+
+ -- Yunusemre Şentürk <se.yunusemre@gmail.com>  Fri, 02 Aug 2019 17:07:52 +0300
+
 desktop-base (10.0.19pardus6) unstable; urgency=medium
 
   * Add purple theme and make it default
