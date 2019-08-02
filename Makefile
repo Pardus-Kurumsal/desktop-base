@@ -1,4 +1,5 @@
 GRUB_THEMES=optimum-theme/grub\
+	purple-theme/grub\
 	runner-theme/grub
 DEFAULT_BACKGROUND=desktop-background
 
@@ -88,7 +89,7 @@ install-local:
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/runner-theme/lockscreen RunnerLockScreen
 
-	# Optimum theme (Ondokuz's default)
+	# Optimum theme (Ondokuz's secondary)
 	### Plymouth theme
 	install -d $(DESTDIR)/usr/share/plymouth/themes/optimum
 	$(INSTALL_DATA) $(wildcard optimum-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/optimum
@@ -116,6 +117,42 @@ install-local:
 	# Lock screen symlink for KDE
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/optimum-theme/lockscreen OptimumLockScreen
+
+        # Purple theme (Ondokuz's default)
+	### Plymouth theme
+	install -d $(DESTDIR)/usr/share/plymouth/themes/purple
+	$(INSTALL_DATA) $(wildcard purple-theme/plymouth/*) $(DESTDIR)/usr/share/plymouth/themes/purple
+	install -d $(DESTDIR)/usr/share/desktop-base/purple-theme
+	cd $(DESTDIR)/usr/share/desktop-base/purple-theme && ln -s /usr/share/plymouth/themes/purple plymouth
+
+	### Login background
+	install -d $(DESTDIR)/usr/share/desktop-base/purple-theme/login
+	$(INSTALL_DATA) $(wildcard purple-theme/login/*) $(DESTDIR)/usr/share/desktop-base/purple-theme/login
+
+	### Wallpapers
+	install -d $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper/contents/images
+	$(INSTALL_DATA) purple-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper
+	$(INSTALL_DATA) purple-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper
+	$(INSTALL_DATA) $(wildcard purple-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper/contents/images/
+	$(INSTALL_DATA) purple-theme/gnome-wp-list.xml $(DESTDIR)/usr/share/gnome-background-properties/pardus-purple.xml
+	# Wallpaper symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/purple-theme/wallpaper Purple
+
+	### Lockscreen is using the same image as wallpaper
+	install -d $(DESTDIR)/usr/share/desktop-base/purple-theme/lockscreen/contents/images
+	$(INSTALL_DATA) purple-theme/wallpaper/metadata.desktop $(DESTDIR)/usr/share/desktop-base/purple-theme/lockscreen
+	$(INSTALL_DATA) purple-theme/wallpaper/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/purple-theme/lockscreen
+	$(INSTALL_DATA) $(wildcard purple-theme/wallpaper/contents/images/*) $(DESTDIR)/usr/share/desktop-base/purple-theme/lockscreen/contents/images/
+
+	### Alternate wallpaper with Debian swirl
+	install -d $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper-withlogo/contents/images
+	$(INSTALL_DATA) purple-theme/wallpaper-withlogo/metadata.desktop $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper-withlogo
+	$(INSTALL_DATA) purple-theme/wallpaper-withlogo/gnome-background.xml $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper-withlogo
+	$(INSTALL_DATA) $(wildcard purple-theme/wallpaper-withlogo/contents/images/*) $(DESTDIR)/usr/share/desktop-base/purple-theme/wallpaper-withlogo/contents/images/
+	# Lock screen symlink for KDE
+	install -d $(DESTDIR)/usr/share/wallpapers
+	cd $(DESTDIR)/usr/share/wallpapers && ln -s /usr/share/desktop-base/purple-theme/wallpaper-withlogo PurpleWithLogo
 
 
 include Makefile.inc

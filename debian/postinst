@@ -67,6 +67,7 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
             /usr/share/desktop-base/$theme-theme $priority
     done << EOF
 optimum 50
+purple 60
 runner 40
 EOF
 
@@ -85,6 +86,13 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper/contents/images/$filename $priority
     done << EOF
 optimum 1920x1080.svg 65
+purple 1920x1080.svg 70
+purple 1600x1200.svg 70
+purple 1280x1024.svg 70
+purple 1920x1200.svg 70
+purple 2560x1080.svg 70
+purple 2560x1440.svg 70
+purple 3840x2160.svg 70
 runner 1024x768.svg 50
 runner 1280x720.svg 50
 runner 1280x800.svg 50
@@ -114,6 +122,7 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper/gnome-background.xml $priority
     done << EOF
 optimum 40
+purple 50
 runner 30
 EOF
 
@@ -134,6 +143,7 @@ EOF
             /usr/share/desktop-base/$theme-theme/lockscreen/gnome-background.xml $priority
     done << EOF
 optimum 40
+purple 50
 runner 30
 EOF
 
@@ -153,6 +163,7 @@ EOF
             /usr/share/desktop-base/$theme-theme/wallpaper $priority
     done << EOF
 optimum 40
+purple 50
 runner 30
 EOF
 
@@ -170,6 +181,7 @@ EOF
             /usr/share/desktop-base/$theme-theme/login/$background $priority
     done << EOF
 optimum background.svg 40
+purple background.svg 50
 runner background.svg 30
 EOF
 
@@ -215,6 +227,8 @@ EOF
     done << EOF
 optimum 4x3 40
 optimum 16x9 40
+purple 4x3 50
+purple 16x9 50
 runner 4x3 30
 runner 16x9 30
 EOF
@@ -240,4 +254,9 @@ EOF
         update-initramfs -u
     fi
 
+fi
+
+# Set purple as default plymouth theme
+if [ $(plymouth-set-default-theme) != "purple"  ]; then
+    plymouth-set-default-theme -R purple
 fi
